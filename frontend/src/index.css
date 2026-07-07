@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Invert the slate color palette for human-designed light-mode */
+  --color-slate-50: #09090b;   /* zinc-950 (darkest) */
+  --color-slate-100: #18181b;  /* zinc-900 */
+  --color-slate-200: #27272a;  /* zinc-800 */
+  --color-slate-300: #3f3f46;  /* zinc-700 */
+  --color-slate-400: #52525b;  /* zinc-600 */
+  --color-slate-500: #71717a;  /* zinc-500 */
+  --color-slate-600: #a1a1aa;  /* zinc-400 */
+  --color-slate-700: #d4d4d8;  /* zinc-300 */
+  --color-slate-800: #e4e4e7;  /* zinc-200 */
+  --color-slate-900: #f4f4f5;  /* zinc-100 */
+  --color-slate-950: #fcfcfd;  /* zinc-50 (lightest) */
+
+  /* Map text-white to dark text for light-mode readability */
+  --color-white: #18181b;
+  --color-black: #ffffff;
+
+  /* Custom palette colors */
+  --color-darkBg: #fcfcfd;
+  --color-darkCard: #ffffff;
+  --color-accentBlue: #2563eb;   /* Premium blue */
+  --color-accentGreen: #16a34a;  /* Sage/emerald green */
+  --color-accentPurple: #7c3aed; /* Indigo/purple */
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden;
+    /* Soft Scandinavian warm background gradient */
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.02) 0px, transparent 40%),
+      radial-gradient(at 100% 100%, rgba(124, 58, 237, 0.02) 0px, transparent 40%);
+    min-height: 100vh;
+  }
+
+  /* Custom minimalist scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full hover:bg-slate-600 transition-colors;
+  }
+}
+
+/* Minimalist Clean Panel (Scandinavian style) */
+.glass-panel {
+  background: #ffffff;
+  border: 1px solid #e4e4e7; /* zinc-200 */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-panel-hover:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Soft animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Tactile shadows instead of glowing neons */
+.premium-glow {
+  box-shadow: 0 4px 14px -3px rgba(37, 99, 235, 0.12), 0 2px 6px -2px rgba(37, 99, 235, 0.08);
+}
+
+.premium-glow-purple {
+  box-shadow: 0 4px 14px -3px rgba(124, 58, 237, 0.12), 0 2px 6px -2px rgba(124, 58, 237, 0.08);
+}

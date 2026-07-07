@@ -1,0 +1,32 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build outputs
+dist/
+build/
+
+# Local env files (contain secret keys)
+backend/.env
+.env
+.env.local
+.env.*.local
+
+# IDE and system files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Agent and temporary files
+.agents/
+.gemini/
+scratch/
+task.md
+walkthrough.md
+implementation_plan.md
